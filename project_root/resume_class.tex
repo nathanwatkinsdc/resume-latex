@@ -1,0 +1,69 @@
+% Resume class definitions
+\usepackage[margin=0.75in]{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{xcolor}
+
+% Define colors
+\definecolor{headercolor}{RGB}{51, 102, 153}
+\definecolor{sectioncolor}{RGB}{51, 102, 153}
+
+% Remove page numbers
+\pagestyle{empty}
+
+% Personal info variables
+\newcommand{\name}[1]{\def@name{#1}}
+\newcommand{\address}[1]{\def@address{#1}}
+\newcommand{\email}[1]{\def@email{#1}}
+\newcommand{\website}[1]{\def@website{#1}}
+\newcommand{\phone}[1]{\def@phone{#1}}
+
+% Header command
+\newcommand{\makeheader}{
+\begin{center}
+{\huge\textbf{\textcolor{headercolor}{@name}}} \[0.3em]
+@address , $\bullet$ , \href{mailto:@email}{@email} \
+\href{@website}{@website} , $\bullet$ , @phone
+\end{center}
+\vspace{1em}
+}
+
+% Section formatting
+\titleformat{\section}
+{\large\textbf\textcolor{sectioncolor}}
+{}
+{0em}
+{}
+[\titlerule]
+
+\titlespacing*{\section}{0pt}{1.5em}{0.5em}
+
+% Subsection formatting (for job titles)
+\titleformat{\subsection}
+{\textbf}
+{}
+{0em}
+{}
+
+\titlespacing*{\subsection}{0pt}{1em}{0.2em}
+
+% Custom commands for experience entries
+\newcommand{\experienceentry}[4]{
+\subsection{#1}
+\textit{#2}, #3 , $\bullet$ , #4
+\vspace{0.3em}
+}
+
+% Custom commands for education entries
+\newcommand{\educationentry}[3]{
+\subsection{#1}
+\textit{#2}, #3
+\vspace{0.3em}
+}
+
+% Bullet point styling
+\setlist[itemize]{leftmargin=1.2em, topsep=0.2em, itemsep=0.1em, parsep=0em}
+
+% Line spacing
+\renewcommand{\baselinestretch}{1.1}
